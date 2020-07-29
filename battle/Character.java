@@ -3,24 +3,24 @@ public class Character {
 	String name;
 	
 	public Character() {
-		hp = 100;//7.1 Šî–{Œ^•Ï”‚Ì‘ã“ü
+		hp = 100;
 		atk = 10;
 		mp = 20;
 	}
 	
-	public final void attack(Character c, Character tgt) {//9.7 CüqFfinal‚É‚æ‚é§Œä
+	public final void attack(Character c, Character tgt) {
 		tgt.hp -= c.atk;
-		System.out.println(c.name + "‚Ì‚±‚¤‚°‚«!");
-		System.out.println(tgt.name + "‚ÉA" + c.atk + "ƒ_ƒ[ƒW‚ğ—^‚¦‚½B");
+		System.out.println(c.name + "ã®ã“ã†ã’ã!");
+		System.out.println(tgt.name + "ã«ã€" + c.atk + "ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆãŸã€‚");
 	}
 	
 	public final void sleep(Character c) {
-		System.out.println("‚Í–°‚Á‚½B");
+		System.out.println("ã¯çœ ã£ãŸã€‚");
 		if ( c.hp <= 95) {
-			System.out.println(c.name + "‚ÍA5ƒ|ƒCƒ“ƒg‰ñ•œ‚µ‚½!");
+			System.out.println(c.name + "ã¯ã€5ãƒã‚¤ãƒ³ãƒˆå›å¾©ã—ãŸ!");
 			c.hp += 5;
 		} else {
-			System.out.println(c.name + "‚ÍA" + (100-c.hp) + "ƒ|ƒCƒ“ƒg‰ñ•œ‚µ‚½!");
+			System.out.println(c.name + "ã¯ã€" + (100-c.hp) + "ãƒã‚¤ãƒ³ãƒˆå›å¾©ã—ãŸ!");
 			c.hp = 100;
 		}
 	}
@@ -28,7 +28,7 @@ public class Character {
 	public void tokugi(Character c, Character tgt) {}
 	
 	public final void run() {
-		System.out.println("ím‚½‚¿‚Í“¦‚°o‚µ‚½I");
+		System.out.println("æˆ¦å£«ãŸã¡ã¯é€ƒã’å‡ºã—ãŸï¼");
 		System.out.println("GameOver");
 	}
 }
