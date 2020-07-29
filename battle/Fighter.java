@@ -1,19 +1,19 @@
 public class Fighter extends Character {
 	public Fighter(String nm) {
 		name = nm;
-		atk = super.atk;//9.5 ƒX[ƒp[ƒNƒ‰ƒX‚Ìƒƒ“ƒo‚Ö‚Ì–¾¦“I‚ÈƒAƒNƒZƒX
+		atk = super.atk;
 		AdvRe.heroNum++;
-		System.out.println(this.name + "‚ÌUŒ‚—ÍF" + atk + "A‘Ì—ÍF" + hp + "A–‚—ÍF" + mp + "‚¾B");
+		System.out.println(this.name + "ã®æ”»æ’ƒåŠ›ï¼š" + atk + "ã€ä½“åŠ›ï¼š" + hp + "ã€é­”åŠ›ï¼š" + mp + "ã ã€‚");
 
 	}
 	
-	public void tokugi(Character f,Character tgt) {//9.4 ƒI[ƒo[ƒ‰ƒCƒh
+	public void tokugi(Character f,Character tgt) {
 		if ( f.mp >=5 ) {
 			f.mp -= 5;
 			tgt.hp -= f.atk *2;
-			System.out.println(f.name + "‚Ìƒpƒ[ƒAƒ^ƒbƒN!");
-			System.out.println(tgt.name + "‚ÉA" + (f.atk *2) + "ƒ_ƒ[ƒW—^‚¦‚½B");
+			System.out.println(f.name + "ã®ãƒ‘ãƒ¯ãƒ¼ã‚¢ã‚¿ãƒƒã‚¯!");
+			System.out.println(tgt.name + "ã«ã€" + (f.atk *2) + "ãƒ€ãƒ¡ãƒ¼ã‚¸ä¸ãˆãŸã€‚");
 		} else
-			System.out.println("MP‚ª‘«‚è‚È‚¢c\nƒpƒ[ƒAƒ^ƒbƒN‚É¸”s‚µ‚½B");
+			System.out.println("MPãŒè¶³ã‚Šãªã„â€¦\nãƒ‘ãƒ¯ãƒ¼ã‚¢ã‚¿ãƒƒã‚¯ã«å¤±æ•—ã—ãŸã€‚");
 	}
 }
