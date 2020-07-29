@@ -1,16 +1,16 @@
-public class AdvRe extends Character{//9.1 ƒNƒ‰ƒX‚ÌŠg’£
+public class AdvRe extends Character{
 	static int heroNum,monNum,count;
 
 	public static void main(String[] args) {
-		Object[] obj = new Object[3];//9.8 ObjectƒNƒ‰ƒX
-		Character[] c = new Character[3];//8.2 ƒIƒuƒWƒFƒNƒgŒ^‚Ì”z—ñ & 9.2 ƒX[ƒp[ƒNƒ‰ƒX‚ÆƒTƒuƒNƒ‰ƒX‚Ìg—p@& 9.6 ƒI[ƒo[ƒ‰ƒCƒh‚É‚æ‚é‘½—l«
+		Object[] obj = new Object[3];
+		Character[] c = new Character[3];
 		obj = c;
-		c[0] = new Fighter("Tarou");//7.2 ƒIƒuƒWƒFƒNƒgŒ^•Ï”‚Ì‘ã“ü 
+		c[0] = new Fighter("Tarou");
 		c[1] = new Mage("Jirou");
 		c[2] = new Monster("Mash");
 		
-		System.out.println("ƒoƒgƒ‹ƒXƒ^[ƒgI");
-		System.out.println("ƒq[ƒ[‚Ì" + c[0].name + "‚Æ" + c[1].name + "‚Ì‘O‚Éƒ‚ƒ“ƒXƒ^[‚Ì" + c[2].name + "‚ªŒ»‚ê‚½B");
+		System.out.println("ãƒãƒˆãƒ«ã‚¹ã‚¿ãƒ¼ãƒˆï¼");
+		System.out.println("ãƒ’ãƒ¼ãƒ­ãƒ¼ã®" + c[0].name + "ã¨" + c[1].name + "ã®å‰ã«ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®" + c[2].name + "ãŒç¾ã‚ŒãŸã€‚");
 		while ( monNum >= 1 && heroNum >= 1 ) {
 			status(c[0],c[0], c[1], c[2] );
 			cdf(c[0], c[2], c[1]);
@@ -28,29 +28,29 @@ public class AdvRe extends Character{//9.1 ƒNƒ‰ƒX‚ÌŠg’£
 			}
 		}
 		if ( heroNum == 0 ) {
-			System.out.println("ƒq[ƒ[‚½‚¿‚ÍA—Ís‚«‚½c");
+			System.out.println("ãƒ’ãƒ¼ãƒ­ãƒ¼ãŸã¡ã¯ã€åŠ›å°½ããŸâ€¦");
 			System.out.println("GameOver");
 		} else if ( monNum == 0 ) {
-			System.out.println("ƒ‚ƒ“ƒXƒ^[" + c[2].name + "‚ğ“|‚µ‚½!");
-			System.out.println("ƒq[ƒ[‚½‚¿‚ÌŸ—˜!");
+			System.out.println("ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼" + c[2].name + "ã‚’å€’ã—ãŸ!");
+			System.out.println("ãƒ’ãƒ¼ãƒ­ãƒ¼ãŸã¡ã®å‹åˆ©!");
 			System.out.println("Game Clear!!");
 		}
 	}
 		
 	public static void cdf(Character f, Character enemy, Character c) {
 		if ( f.hp == 0 ) {
-			System.out.println(f.name + "‚Í€‚ñ‚Å‚¢‚éB");
+			System.out.println(f.name + "ã¯æ­»ã‚“ã§ã„ã‚‹ã€‚");
 			return;
 		} else {
-			System.out.println(f.name + "‚Ìƒ^[ƒ“\n");
+			System.out.println(f.name + "ã®ã‚¿ãƒ¼ãƒ³\n");
 			int cd = cmdslc();
-			if ( cd == 1 ) { f.attack(f, enemy); }//7.3 ’l“n‚µ‚ÆQÆ“n‚µ@& 9.3 ƒX[ƒp[ƒNƒ‰ƒX‚ÆƒTƒuƒNƒ‰ƒX‚ÌŠÖŒW
+			if ( cd == 1 ) { f.attack(f, enemy); }
 			else if ( cd == 2 ) { f.tokugi(f, enemy); }
 			else if ( cd == 3 ) { f.sleep(f); }
 			else if ( cd == 4 ) { f.run(); }
 			if ( enemy.hp <= 0 ) {
 				enemy.hp = 0;
-				System.out.println(enemy.name +"‚Í—Ís‚«‚½B");
+				System.out.println(enemy.name +"ã¯åŠ›å°½ããŸã€‚");
 			}
 			if ( f.mp <= 0 ) { f.mp = 0; }
 		}
@@ -61,10 +61,10 @@ public class AdvRe extends Character{//9.1 ƒNƒ‰ƒX‚ÌŠg’£
 			return;
 		} else {
 			if ( m.hp == 0 ) {
-				System.out.println(m.name + "‚Í€‚ñ‚Å‚¢‚éB");
+				System.out.println(m.name + "ã¯æ­»ã‚“ã§ã„ã‚‹ã€‚");
 				return;
 			}
-			System.out.println(m.name + "‚Ìƒ^[ƒ“\n");
+			System.out.println(m.name + "ã®ã‚¿ãƒ¼ãƒ³\n");
 			int cd = cmdslc();
 			if ( cd == 1 ) { m.attack(m, enemy); }
 			else if ( cd == 2 ) { m.tokugi(m, enemy);}
@@ -72,7 +72,7 @@ public class AdvRe extends Character{//9.1 ƒNƒ‰ƒX‚ÌŠg’£
 			else if ( cd == 4 ) { m.run(); }
 			if ( enemy.hp <= 0 ) {
 				enemy.hp = 0;
-				System.out.println(enemy.name +"‚Í—Ís‚«‚½B");
+				System.out.println(enemy.name +"ã¯åŠ›å°½ããŸã€‚");
 			}
 			if ( m.mp <= 0 ) { m.mp = 0; }
 		}
@@ -80,9 +80,9 @@ public class AdvRe extends Character{//9.1 ƒNƒ‰ƒX‚ÌŠg’£
 	
 	public  static void cdmon(Character enemy, Character c, Character c2) {
 		if ( c.hp == 0 ) {
-			System.out.println(c.name + "‚Í€‚ñ‚Å‚¢‚éB");
+			System.out.println(c.name + "ã¯æ­»ã‚“ã§ã„ã‚‹ã€‚");
 		} else {
-			System.out.println(enemy.name + "‚Ì" + c.name + "‚Ö‚Ìƒ^[ƒ“");
+			System.out.println(enemy.name + "ã®" + c.name + "ã¸ã®ã‚¿ãƒ¼ãƒ³");
 			int cd = cmdslc();
 			if ( cd == 1 ) { enemy.attack(enemy, c); }
 			else if ( cd == 2 ) { enemy.tokugi(enemy, c); }
@@ -90,24 +90,24 @@ public class AdvRe extends Character{//9.1 ƒNƒ‰ƒX‚ÌŠg’£
 			else if ( cd == 4 ) { enemy.run(); }
 			if ( c.hp <= 0 ) {
 				c.hp = 0;
-				System.out.println(c.name +"‚Í—Ís‚«‚½B");
+				System.out.println(c.name +"ã¯åŠ›å°½ããŸã€‚");
 			}
 			if ( enemy.mp <= 0 ) { enemy.mp = 0; }
 		}
 	}
 	
 	public static int cmdslc() {
-		System.out.println("‚Ç‚¤‚·‚éH\n");
-		System.out.println(" 1:‚±‚¤‚°‚«\n 2:‚Æ‚­‚¬\n 3:‚Ë‚Ş‚é\n 4:‚É‚°‚é");
+		System.out.println("ã©ã†ã™ã‚‹ï¼Ÿ\n");
+		System.out.println(" 1:ã“ã†ã’ã\n 2:ã¨ãã\n 3:ã­ã‚€ã‚‹\n 4:ã«ã’ã‚‹");
 		int cd = new java.util.Scanner(System.in).nextInt();
 		return cd;
 	}
 	
 	public static void status(Character h, Character a, Character b, Character c) {
 		if ( h.hp > 0 ) {
-			System.out.println(a.name + "‚ÍA‘Ì—ÍF" + a.hp + "A–‚—ÍF" + a.mp);
-			System.out.println(b.name + "‚ÍA‘Ì—ÍF" + b.hp + "A–‚—ÍF" + b.mp);
-			System.out.println(c.name + "‚ÍA‘Ì—ÍF" + c.hp + "A–‚—ÍF" + c.mp + "\n");
+			System.out.println(a.name + "ã¯ã€ä½“åŠ›ï¼š" + a.hp + "ã€é­”åŠ›ï¼š" + a.mp);
+			System.out.println(b.name + "ã¯ã€ä½“åŠ›ï¼š" + b.hp + "ã€é­”åŠ›ï¼š" + b.mp);
+			System.out.println(c.name + "ã¯ã€ä½“åŠ›ï¼š" + c.hp + "ã€é­”åŠ›ï¼š" + c.mp + "\n");
 		}
 	}
 }
